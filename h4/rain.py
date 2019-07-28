@@ -54,4 +54,5 @@ def enter_select():
     pass
 
 
-enter_want_type()
+# enter_want_type()
+print(rain_random())

@@ -5,7 +5,16 @@
 # b2-4ac < 0，則印出”沒有實根”。
 
 
-a=3
-b=4
-c=5
+a = 3
+b = 40
+c = 5
+root = (b ** 2) - 4 * a * c
 
+if root > 0:
+    print("有兩個不相等的實根")
+    print("實跟1：{}，實跟2：{}".format((-b + root) / (2 * a), (-b - root) / (2 * a)))
+elif root == 0:
+    print("有兩個相等的實根")
+    print("".format((-b)/(2*a)))
+elif root < 0:
+    print("沒有實根")

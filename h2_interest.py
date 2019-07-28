@@ -5,6 +5,9 @@ while simple >= compound:
     simple = simple * (1 + 0.1 ** m_year)
     compound = compound * ((1 + 0.05) ** m_year)
     m_year += 1
+    print(m_year)
+    print(simple)
+    print(compound)
 
 print(m_year)
 print(simple)

@@ -20,18 +20,32 @@ class employee:
                                                                                    self.phone,
                                                                                    self.home_access, self.salary))
 
-    def ordinary(self, salary, overtime):
-        self.salary = salary+((salary / 240) * 1.5 * overtime)
+    def ordinary(self, salary, overtime=0):
+        self.salary = salary + ((salary / 240) * 1.5 * overtime)
 
     def Primary_supervisor(self, salary):
-        self.salary = salary+(1800 + 2000 + 5000)
+        self.salary = salary + (1800 + 2000 + 5000)
 
     def Secondary_supervisor(self, salary):
-        self.salary = salary+ (1800 + 3000)
+        self.salary = salary + (1800 + 3000)
 
 
-buffet = employee('hellobuffet', '男', '2018/01/01', '0972126115', '羅德島')
-buffet.ordinary(18000, 0)
-buffet.Primary_supervisor(18000)
+def main():
+    大園所長 = employee('大園所長', '男', '2018/01/01', '123456789', '東京')
+    大園所長.Primary_supervisor(18000)
+    print(大園所長)
 
-print(buffet)
+    兩津勘及 = employee('兩津勘及', '男', '2018/01/01', '987654321', '微笑宿舍')
+    兩津勘及.Secondary_supervisor(18000)
+    print(兩津勘及)
+
+    work01 = employee('work01', '男', '2018/01/01', '123456789', '東京')
+    work01.ordinary(18000)
+    print(work01)
+
+    work02 = employee('work02', '男', '2018/01/01', '123456789', '東京')
+    work02.ordinary(18000, 120)
+    print(work02)
+
+
+main()

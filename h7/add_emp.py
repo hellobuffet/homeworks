@@ -23,8 +23,9 @@ config = {'database': 'db01',
 try:
     conn = mysql.connector.connect(**config)
     cursor = conn.cursor()
-    upd = "inter into employee VALUES(%s,%s,%s,%s,%s,%s)"
-    cursor.execute(upd, tuple(emp_list))
+    upd = 'insert into employee VALUES(%s,%s,%s,%s,%s,%s)'
+    for i in emp_list:
+        cursor.executemany(upd, i)
     conn.commit()
     print('insert', cursor.rowcount, "employees")
 except mysql.connector.Error as err:
